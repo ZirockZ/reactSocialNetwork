@@ -1,0 +1,185 @@
+.content{
+    width: 940px;
+    height: calc(99% - 120px);
+
+    margin-left: auto;
+}
+
+.profile-info{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.profile-background{
+    background-color: #9ca8b9;
+    height: 172px;
+
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.profile-background img{
+    display: block;
+
+    width: 912px;
+    height: 150px;    
+    margin: auto;
+
+    object-fit: cover;
+}
+
+.profile-pic{
+    background-color: #9ca8b9;
+    height: 252px;
+    width: 252px;
+
+    display: flex;
+}
+
+.profile-pic img{
+    height: 224px;
+    width: 224px;
+
+    margin: auto;
+
+    object-fit: cover;
+}
+
+.name-birth{
+    display: flex;
+}
+
+.profile-text{
+    background-color: #9ca8b9;
+    position: relative;
+
+    margin-left: 10px;
+    width: 688px;
+
+    color: white;
+}
+
+div#name, div#city, div#education, #web-site{
+    margin-left: 15px;
+}
+
+.profile-text div#name{
+    margin-top: 15px;
+    font-size: 25px;
+}
+
+.profile-text div#birthdate{
+    margin-top: 17px;
+    margin-left: auto;
+    margin-right: 15px;
+
+    font-size: 20px;
+}
+
+div#city, div#education, #web-site{
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 18px;
+
+    bottom: 0;
+    position: absolute;
+}
+
+div#city{
+    margin-bottom: 60px;
+}
+
+div#education{
+    margin-bottom: 35px;
+}
+
+#web-site{
+    margin-bottom: 10px;
+}
+
+.profile-new-post{
+    margin-bottom: 10px;
+    background-color: #9ca8b9;
+    width: 940px;
+    height: 220px;
+}
+
+.new-post-header{
+    color: white;
+    font-size: 25px;
+    width: 912px;
+    padding-top: 5px;
+    margin-left: 14px;
+    text-align: center;
+}
+
+.new-post-text{
+    resize: none;
+    font-size: 20px;
+    width: 912px;
+    height: 120px;
+    margin-top: 5px;
+    margin-left: 14px;
+    padding: 0;
+}
+
+.new-post-button{
+    display: block;
+
+    width: 912px;
+    height: 30px;
+    margin-left: 14px;
+    border: none;
+}
+
+.profile-post{
+    background-color: #9ca8b9;
+    min-height: 150px;
+    height: min-content;
+    width: 940px;
+
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.post-info{
+    display: flex;
+    color: white;
+    padding-top: 10px;
+}
+
+.profile-post .post-autor-icon img{
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 15px;
+}
+
+.post-autor-name{
+    font-size: 20px;
+    line-height: 50px;
+    margin-left: 15px;
+}
+
+.post-date{
+    margin-left: auto;
+    line-height: 54px;
+    margin-right: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

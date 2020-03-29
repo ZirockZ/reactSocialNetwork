@@ -1,0 +1,46 @@
+.header-container{
+    background: white;
+    position: fixed;
+}
+
+.header{
+    height: 100px;
+    width: 1180px;
+
+    margin: auto;
+    margin-top: 10px;
+
+    background: #9ca8b9;
+    justify-content: center;
+
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.header img.nav-logo{
+    height: 90px;
+
+    margin-left: 15px; 
+
+    position: absolute;
+    left: 0;
+}
+
+.header img.profile-pic-icon{
+    margin-right: 1%;
+
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+
+    position: absolute;
+    right: 0;
+}
+
+.header .profile-name{
+    font-size: 40px;
+    color: white;
+}
+

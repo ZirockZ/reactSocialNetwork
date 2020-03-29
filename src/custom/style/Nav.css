@@ -1,0 +1,32 @@
+.nav{
+    background-color: #9ca8b9;
+
+    width: 230px;
+    height: calc(99% - 120px);
+    position: fixed;
+
+    margin-right: 10px;
+}
+
+.main-nav-panel{
+    margin-top: 7%;
+    margin-bottom: 15%;
+}
+
+a{
+    display: block;
+
+    padding: 5px 0 5px 0;
+    text-align: center;
+
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+a:hover{
+    background: white;
+    color: #9ca8b9
+}
+
+
