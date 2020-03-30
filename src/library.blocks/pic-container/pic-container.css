@@ -1,0 +1,8 @@
+.pic-container{
+    display: flex;
+}
+
+.pic-container_img{
+    margin: auto;
+    object-fit: cover;
+}

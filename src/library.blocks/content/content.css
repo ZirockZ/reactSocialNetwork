@@ -1,0 +1,6 @@
+.content{
+    width: 940px;
+    height: calc(99% - 120px);
+    
+    margin-left: auto;
+}

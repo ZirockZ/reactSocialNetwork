@@ -1,6 +1,4 @@
 .nav{
-    background-color: #9ca8b9;
-
     width: 230px;
     height: calc(99% - 120px);
     position: fixed;
@@ -8,15 +6,10 @@
     margin-right: 10px;
 }
 
-.main-nav-panel{
-    margin-top: 7%;
-    margin-bottom: 15%;
-}
-
-a{
+.nav_a{
     display: block;
 
-    padding: 5px 0 5px 0;
+    padding: 8px 0 8px 0;
     text-align: center;
 
     text-decoration: none;
@@ -24,9 +17,17 @@ a{
     font-size: 25px;
 }
 
-a:hover{
+.nav_a:hover{
     background: white;
     color: #9ca8b9
+}
+
+.nav_a_margin-top_20px{
+    margin-top: 20px;
+}
+
+.nav_a_margin-top_80px{
+    margin-top: 80px;
 }
 
 

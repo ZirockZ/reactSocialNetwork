@@ -1,0 +1,33 @@
+.profile-new-post{
+    margin-bottom: 10px;
+    width: 940px;
+    height: 220px;
+}
+
+.profile-new-post_header{
+    color: white;
+    font-size: 25px;
+    width: 912px;
+    padding-top: 5px;
+    margin-left: 14px;
+    text-align: center;
+}
+
+.profile-new-post_text{
+    resize: none;
+    font-size: 20px;
+    width: 912px;
+    height: 120px;
+    margin-top: 5px;
+    margin-left: 14px;
+    padding: 0;
+}
+
+.profile-new-post_button{
+    display: block;
+
+    width: 912px;
+    height: 30px;
+    margin-left: 14px;
+    border: none;
+}

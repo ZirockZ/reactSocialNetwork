@@ -1,0 +1,11 @@
+.profile-background{
+    height: 172px;
+
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.profile-background_img{
+    width: 912px;
+    height: 150px;    
+}

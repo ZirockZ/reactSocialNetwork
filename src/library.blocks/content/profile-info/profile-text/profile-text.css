@@ -1,0 +1,50 @@
+.profile-text{
+    position: relative;
+
+    margin-left: 10px;
+    width: 688px;
+
+    color: white;
+}
+
+.profile-text_name-birth{
+    display: flex;
+}
+
+.profile-text_name, .profile-text_city, .profile-text_education, .profile-text_web-site{
+    margin-left: 15px;
+}
+
+.profile-text_name{
+    margin-top: 15px;
+    font-size: 25px;
+}
+
+.profile-text_birthdate{
+    margin-top: 17px;
+    margin-left: auto;
+    margin-right: 15px;
+
+    font-size: 20px;
+}
+
+.profile-text_city, .profile-text_education, .profile-text_web-site{
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 18px;
+
+    bottom: 0;
+    position: absolute;
+}
+
+.profile-text_city{
+    margin-bottom: 60px;
+}
+
+.profile-text_education{
+    margin-bottom: 35px;
+}
+
+.profile-text_web-site{
+    margin-bottom: 10px;
+}

@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import Header from './custom/Header';
-import Nav from './custom/Nav';
-import Content from './custom/Content';
+import Header from './library.blocks/header/header';
+import Nav from './library.blocks/nav/nav';
+import Content from './library.blocks/content/content.js';
+
 
 const App = () =>
   (

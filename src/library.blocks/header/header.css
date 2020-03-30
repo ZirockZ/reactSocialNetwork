@@ -1,24 +1,22 @@
-.header-container{
+.header{
     background: white;
     position: fixed;
+    z-index: 999;
 }
 
-.header{
+.header_content{
+    display: flex;
     height: 100px;
     width: 1180px;
 
     margin: auto;
     margin-top: 10px;
-
-    background: #9ca8b9;
-    justify-content: center;
-
-    display: flex;
-    align-items: center;
     margin-left: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
-.header img.nav-logo{
+.header_content img.nav-logo{
     height: 90px;
 
     margin-left: 15px; 
@@ -27,7 +25,7 @@
     left: 0;
 }
 
-.header img.profile-pic-icon{
+.header_content img.profile-pic-icon{
     margin-right: 1%;
 
     width: 80px;
@@ -39,7 +37,7 @@
     right: 0;
 }
 
-.header .profile-name{
+.header_content .profile-name{
     font-size: 40px;
     color: white;
 }
