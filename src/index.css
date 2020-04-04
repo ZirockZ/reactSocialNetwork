@@ -3,4 +3,6 @@ html, body, #root{
 
   background: #c3cfe0;
   overflow-y: auto;
+
+  height: 100%;
 }

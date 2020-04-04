@@ -1,0 +1,35 @@
+.dialogs-list-message{
+    height: 80px;
+    margin-bottom: 4px;
+}
+
+.message-sender{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 5px;
+}
+
+.message-sender_img{
+    height: 25px;
+    width: 25px;
+
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.message-sender_name, .dialogs-list-message_text{
+    color: white;
+}
+
+.message-sender_name{
+    margin-left: 5px;
+}
+
+.dialogs-list-message_text{
+    text-align: center;
+    margin-top: 10px;
+
+    font-size: 20px;
+}

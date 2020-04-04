@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../block.css';
+import '../../../../block.css';
 import './profile-text.css'
 
 const ProfileText = () =>

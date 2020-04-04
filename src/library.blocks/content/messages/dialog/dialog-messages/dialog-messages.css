@@ -1,0 +1,10 @@
+.dialog-messages{
+    margin-top: 10px;
+    height: calc(99% - 173px);
+
+    overflow: auto;
+}
+
+.dialog-messages > div:last-child{
+    margin-bottom: 10px;
+}

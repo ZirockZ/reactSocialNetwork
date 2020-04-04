@@ -1,0 +1,23 @@
+.message{
+    background: white;
+    width: 500px;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 5px 0px 10px 10px;
+}
+
+.message-sender_justify-content_normal{
+    justify-content: normal;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.message-sender_name_color_bluegrey, .message-sender_date, .message_text{
+    color: #9ca8b9;
+    font-family: sans-serif;
+}
+
+.message-sender_date{
+    position: absolute;
+    right: 10px;
+}

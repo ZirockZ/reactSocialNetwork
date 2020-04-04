@@ -1,0 +1,31 @@
+.dialog-input{
+    height: 100px;
+    position: absolute;
+    width: 630px;
+    bottom: 10px;
+}
+
+.dialog-input_textarea{
+    display: block;
+    width: 606px;
+    height: 55px;
+    
+    margin: auto;    
+    border: none;
+    padding: 2px;
+
+    resize: none;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.dialog-input_button{
+    display: block;
+    width: 610px;
+    margin: auto;
+
+    border: none;
+
+    height: 20px;
+}

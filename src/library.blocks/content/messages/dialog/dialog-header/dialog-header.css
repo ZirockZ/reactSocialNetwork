@@ -1,0 +1,27 @@
+.dialog-header{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+
+.dialog-header-sender{
+    display: flex;
+}
+
+.dialog-header_img{
+    width: 40px;
+    height: 40px;
+
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.dialog-header_name{
+    color: white;
+    font-size: 25px;
+
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}

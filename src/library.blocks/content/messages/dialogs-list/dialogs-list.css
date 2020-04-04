@@ -1,0 +1,30 @@
+.dialogs-list{
+    width: 300px;
+    height: calc(99% - 120px);
+    margin-right: 10px;
+
+    position: fixed;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.dialogs-list > div:last-child{
+  margin-bottom: 0;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgb(240, 243, 245); 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #748497; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #58677a; 
+  }

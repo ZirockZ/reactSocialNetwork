@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../block.css';
-import '../content.css';
+import '../../../block.css';
+import '../../content.css';
 import './profile-new-post.css'
 
 const ProfileNewPost = () =>
