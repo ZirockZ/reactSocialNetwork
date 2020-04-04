@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../../block.css';
-import '../../content.css';
 import './profile-post.css'
 
 const ProfilePost = (props) =>
@@ -11,7 +10,7 @@ const ProfilePost = (props) =>
                 <div className="profile-post_autor-name">{props.postSenderName}</div>
                 <div className="profile-post_date">{props.postSendDate}</div>
             </div>
-            <textarea className="profile-post_text" readOnly>{props.postMessage}</textarea>
+            <textarea className="profile-post_text" value={props.postMessage} readOnly></textarea>
         </div>
     );
 
