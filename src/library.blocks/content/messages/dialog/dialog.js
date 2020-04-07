@@ -1,17 +1,17 @@
 import React from 'react';
-import CurrentDialogHeader from './dialog-header/dialog-header.js';
-import CurrentDialogMessages from './dialog-messages/dialog-messages.js';
-import CurrentDialogInput from './dialog-input/dialog-input.js';
+import DialogHeader from './dialog-header/dialog-header.js';
+import DialogMessages from './dialog-messages/dialog-messages.js';
+import DialogInput from './dialog-input/dialog-input.js';
 import './dialog.css';
 
-const CurrentDialog = () =>
+const Dialog = (props) =>
     (
         <div className="dialog">
-            <CurrentDialogHeader/>
-            <CurrentDialogMessages/>
-            <CurrentDialogInput/>
+            <DialogHeader/>
+            <DialogMessages messagesArr={props.state.messagesArr}/>
+            <DialogInput messageAdd={props.state.messageAdd}/>
        </div>
     );
 
 
-export default CurrentDialog;
+export default Dialog;

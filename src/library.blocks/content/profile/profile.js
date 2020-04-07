@@ -5,19 +5,17 @@ import ProfileInfo from './profile-info/profile-info.js';
 import ProfileNewPost from './profile-new-post/profile-new-post.js';
 import ProfilePost from './profile-post/profile-post.js';
 
-const Profile = () =>
-    (
+const Profile = (props) => {
+    let htmlPostsArr = props.state.postsState.postsArr.map(currentElement => <ProfilePost key={currentElement.id} postSenderName={currentElement.postSenderName} postSendDate={currentElement.postSendDate} postMessage={currentElement.postMessage} />);
+
+    return(
         <div className="profile">
             <ProfileBackground />
             <ProfileInfo />
-            <ProfileNewPost />
-            <ProfilePost postSenderName="Андрей Карев" postSendDate="30.03.2020" postMessage="От тебя соцсеть говниной пахнет, удали страницу"/>
-            <ProfilePost postSenderName="Андрей Карев" postSendDate="30.03.2020" postMessage="Ты пидарас"/>
-            <ProfilePost postSenderName="Андрей Карев" postSendDate="30.03.2020" postMessage="Анимешники пидары"/>
-            <ProfilePost postSenderName="Андрей Карев" postSendDate="30.03.2020" postMessage="Три дня создавал страницу на гитхабе"/>
-            <ProfilePost postSenderName="Андрей Карев" postSendDate="30.03.2020" postMessage="Если мы будем вместе делать проект - ты будешь уборщиком в моей компании"/>
-        </div>
+            <ProfileNewPost state={props.state.postsState}/>
+            {htmlPostsArr}
+       </div>
     );
-
+}
 
 export default Profile;

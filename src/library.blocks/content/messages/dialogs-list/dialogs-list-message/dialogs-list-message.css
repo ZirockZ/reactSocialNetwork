@@ -3,6 +3,10 @@
     margin-bottom: 4px;
 }
 
+.dialogs-list-message_a{
+    text-decoration: none;
+}
+
 .message-sender{
     display: flex;
     align-items: center;

@@ -6,14 +6,14 @@ import Nav from './library.blocks/nav/nav';
 import Content from './library.blocks/content/content.js';
 
 
-const App = () =>
+const App = (props) =>
   (
     <BrowserRouter>
       <div className="App">
         <Header />
         <div className="container">
           <Nav />
-          <Content />
+          <Content state={props.state}/>
         </div>
       </div>
     </BrowserRouter>

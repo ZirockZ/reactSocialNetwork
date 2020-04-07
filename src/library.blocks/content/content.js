@@ -5,13 +5,13 @@ import './content.css';
 import '../block.css';
 import { Route } from "react-router-dom";
 
-const Content = () =>
-    (
+const Content = (props) => {
+    return (
         <div className="content">
-            <Route path="/Profile" component={Profile} />
-            <Route path="/Messages" component={Messages} />
+            <Route path="/Profile" render={() => <Profile state={props.state.profilePage}/>} />
+            <Route path="/Messages" render={() => <Messages state={props.state.messagesPage} />} />
         </div>
     );
-
+}
 
 export default Content;
