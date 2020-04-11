@@ -6,7 +6,7 @@ import DialogsListMessage from './dialogs-list-message/dialogs-list-message.js';
 const DialogsList = (props) => {
 
 
-    let htmlMessagesArr = props.dialogsArr.map(currentElement => <DialogsListMessage key={currentElement.userId} id={currentElement.userId} name={currentElement.name} messageText={currentElement.messageText} />);
+    let htmlMessagesArr = props.dialogsArr.map(element => <DialogsListMessage userId={element.userId} sendBy={element.sendBy} text={element.text} />);
 
 
     return(

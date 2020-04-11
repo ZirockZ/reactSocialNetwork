@@ -1,73 +1,81 @@
-import renderer from './render.js';
+import { getDate, getTime } from '../utilities.js';
 
-let getTime = () => {let time = new Date(); return ((time.getHours() < 10) ? "0" : "") + time.getHours() + ":" + ((time.getMinutes() < 10) ? "0" : "") + time.getMinutes();}
-let getDate = () => {let time = new Date(); return ((time.getDay() < 10) ? "0" : "") + time.getDay() + ":" + ((time.getMonth() + 1 < 10) ? "0" : "") + (time.getMonth() + 1) + ":" + time.getFullYear() < 10;}
+const POST_ADD = 'POST-ADD';
+const MESSAGE_ADD = 'MESSAGE-ADD';
+const SET_RENDER_METHOD = 'SET-RENDER-METHOD';
 
-
-
-let dialogsArr = [
-    { name: "Андрей Карев", userId: "1", messageText: "Заебал игнорить" },
-    { name: "Саня Говняшкин", userId: "2", messageText: "Я вернулся" },
-    { name: "Никитка Малышкин", userId: "3", messageText: "Заебал игнорить" },
-    { name: "Андрей Карев", userId: "4", messageText: "Заебал игнорить" },
-    { name: "Андрей Карев", userId: "5", messageText: "Заебал игнорить" },
-    { name: "Андрей Карев", userId: "6", messageText: "Заебал игнорить" },
-    { name: "Андрей Карев", userId: "7", messageText: "Заебал игнорить" },
-    { name: "Андрей Карев", userId: "8", messageText: "Заебал игнорить" },
-    { name: "Андрей Карев", userId: "9", messageText: "Заебал игнорить" },
-    { name: "Андрей Карев", userId: "10", messageText: "Заебал игнорить" },
-    { name: "Андрей Карев", userId: "11", messageText: "Заебал игнорить" },
-    { name: "Андрей Карев", userId: "12", messageText: "Заебал игнорить" }
-];
-
-let messagesArr = [
-    { name: "Андрей Карев", date: "22:48", text: "говно", id: "1" },
-    { name: "Андрей Карев", date: "22:48", text: "не такое уж и говно", id: "2" },
-    { name: "Андрей Карев", date: "22:48", text: "говно", id: "3" },
-    { name: "Андрей Карев", date: "22:48", text: "говно", id: "4" },
-    { name: "Андрей Карев", date: "22:48", text: "говно", id: "5" },
-    { name: "Андрей Карев", date: "22:48", text: "говно", id: "6" },
-    { name: "Андрей Карев", date: "22:48", text: "приколямба", id: "7" },
-    { name: "Андрей Карев", date: "22:48", text: "говно", id: "8" },
-    { name: "Андрей Карев", date: "22:48", text: "говно", id: "9" },
-];
-
-let messageAdd = (name, text, id) => {
-    messagesArr.push({ name, date: getTime(), text, id });
-    renderer(state);
-};
-
-let postsArr = [
-    { id: "1", postSenderName: "Андрей Карев", postSendDate: "30.03.2020", postMessage: "От тебя соцсеть говниной пахнет, удали страницу" },
-    { id: "2", postSenderName: "Андрей Карев", postSendDate: "30.03.2020", postMessage: "Ты пидарас" },
-    { id: "3", postSenderName: "Андрей Карев", postSendDate: "30.03.2020", postMessage: "Анимешники пидары" },
-    { id: "4", postSenderName: "Андрей Карев", postSendDate: "30.03.2020", postMessage: "Три дня создавал страницу на гитхабе" },
-    { id: "5", postSenderName: "Андрей Карев", postSendDate: "30.03.2020", postMessage: "Если мы будем вместе делать проект - ты будешь уборщиком в моей компании" },
-    { id: "6", postSenderName: "Андрей Карев", postSendDate: "30.03.2020", postMessage: "Кусок аштиэмэля" }
-];
-
-let postAdd = ({postSenderName, postMessage, id = "15"}) => {
-    postsArr.unshift({ postSenderName, postSendDate: getDate(), postMessage, id });
-    renderer(state);
-};
-
-let state = {
-    profilePage: { postsState: {
-        postsArr,
-        postAdd
-    } },
+const _state = {
+    profilePage: {
+        postsArr: [
+            { id: "1", sendBy: "Андрей Карев", sendDate: "30.03.2020", text: "От тебя соцсеть говниной пахнет, удали страницу" },
+            { id: "2", sendBy: "Андрей Карев", sendDate: "30.03.2020", text: "Ты пидарас" },
+            { id: "3", sendBy: "Андрей Карев", sendDate: "30.03.2020", text: "Анимешники пидары" },
+            { id: "4", sendBy: "Андрей Карев", sendDate: "30.03.2020", text: "Три дня создавал страницу на гитхабе" },
+            { id: "5", sendBy: "Андрей Карев", sendDate: "30.03.2020", text: "Если мы будем вместе делать проект - ты будешь уборщиком в моей компании" },
+            { id: "6", sendBy: "Андрей Карев", sendDate: "30.03.2020", text: "Кусок аштиэмэля" }
+        ]
+    },
     messagesPage: {
-        dialogsArr,
-        messagesState: {
-            messagesArr,
-            messageAdd
-        }
+        dialogsArr: [
+            { sendBy: "Андрей Карев", userId: "1", text: "Заебал игнорить" },
+            { sendBy: "Саня Говняшкин", userId: "2", text: "Я вернулся" },
+            { sendBy: "Никитка Малышкин", userId: "3", text: "Заебал игнорить" },
+            { sendBy: "Андрей Карев", userId: "4", text: "Заебал игнорить" },
+            { sendBy: "Андрей Карев", userId: "5", text: "Заебал игнорить" },
+            { sendBy: "Андрей Карев", userId: "6", text: "Заебал игнорить" },
+            { sendBy: "Андрей Карев", userId: "7", text: "Заебал игнорить" },
+            { sendBy: "Андрей Карев", userId: "8", text: "Заебал игнорить" },
+            { sendBy: "Андрей Карев", userId: "9", text: "Заебал игнорить" },
+            { sendBy: "Андрей Карев", userId: "10", text: "Заебал игнорить" },
+            { sendBy: "Андрей Карев", userId: "11", text: "Заебал игнорить" },
+            { sendBy: "Андрей Карев", userId: "12", text: "Заебал игнорить" }
+        ],
+        messagesArr: [
+            { sendBy: "Андрей Карев", sendDate: "22:48", text: "говно", id: "1" },
+            { sendBy: "Андрей Карев", sendDate: "22:48", text: "не такое уж и говно", id: "2" },
+            { sendBy: "Андрей Карев", sendDate: "22:48", text: "говно", id: "3" },
+            { sendBy: "Андрей Карев", sendDate: "22:48", text: "говно", id: "4" },
+            { sendBy: "Андрей Карев", sendDate: "22:48", text: "говно", id: "5" },
+            { sendBy: "Андрей Карев", sendDate: "22:48", text: "говно", id: "6" },
+            { sendBy: "Андрей Карев", sendDate: "22:48", text: "приколямба", id: "7" },
+            { sendBy: "Андрей Карев", sendDate: "22:48", text: "говно", id: "8" },
+            { sendBy: "Андрей Карев", sendDate: "22:48", text: "говно", id: "9" },
+        ]
+    }
+}
+
+export const postAddActionCreator = (sendBy, text) => ({type: POST_ADD, sendBy, sendDate: getDate(), text, id: "999"});
+export const messageAddActionCreator = (sendBy, text) => ({type: MESSAGE_ADD, sendBy, sendDate: getTime(), text, id: "999" });
+export const setRenderMethodActionCreator = (method) => ({type: SET_RENDER_METHOD, method});
+
+let store = {
+    get state(){
+        return _state;
+    },
+
+    _rerender() { },
+
+    dispatch(action){
+        switch (action.type){
+            case POST_ADD:
+                this.state.profilePage.postsArr.unshift({ sendBy: action.sendBy, sendDate: getDate(), text: action.text, id: action.id });
+                this._rerender();
+                break;
+            case MESSAGE_ADD:
+                this.state.messagesPage.messagesArr.push({ sendBy: action.sendBy, sendDate: getTime(), text: action.text, id: action.id });
+                this._rerender();
+                break;
+            case SET_RENDER_METHOD:
+                this._rerender = action.method;
+                break;
+            default:
+                alert("Метод не найден");
+                break;
+        }        
     }
 };
 
+window.store = store;
 
-
-
-
-export default state;
+export default store;
 

@@ -6,13 +6,13 @@ import ProfileNewPost from './profile-new-post/profile-new-post.js';
 import ProfilePost from './profile-post/profile-post.js';
 
 const Profile = (props) => {
-    let htmlPostsArr = props.state.postsState.postsArr.map(currentElement => <ProfilePost key={currentElement.id} postSenderName={currentElement.postSenderName} postSendDate={currentElement.postSendDate} postMessage={currentElement.postMessage} />);
+    let htmlPostsArr = props.profilePage.postsArr.map(element => <ProfilePost sendBy={element.sendBy} sendDate={element.sendDate} text={element.text} />);
 
     return(
         <div className="profile">
             <ProfileBackground />
             <ProfileInfo />
-            <ProfileNewPost state={props.state.postsState}/>
+            <ProfileNewPost profilePage={props.profilePage} dispatch={props.dispatch}/>
             {htmlPostsArr}
        </div>
     );

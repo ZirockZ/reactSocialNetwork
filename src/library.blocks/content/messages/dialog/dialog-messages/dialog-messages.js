@@ -4,7 +4,7 @@ import './dialog-messages.css';
 import '../../../../block.css';
 
 const CurrentDialogMessages = (props) => {
-    let htmlMessageArr = props.messagesArr.map(currentElement => <Message key={currentElement.id} name={currentElement.name} date={currentElement.date} text={currentElement.text}/>);
+    let htmlMessageArr = props.messagesArr.map(element => <Message sendBy={element.sendBy} sendDate={element.sendDate} text={element.text}/>);
 
 
 
