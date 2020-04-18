@@ -1,12 +1,9 @@
 import React from 'react';
 import Message from './message/message.js';
 import './dialog-messages.css';
-import '../../../../block.css';
 
-const CurrentDialogMessages = (props) => {
+const DialogMessages = (props) => {
     let htmlMessageArr = props.messagesArr.map(element => <Message sendBy={element.sendBy} sendDate={element.sendDate} text={element.text}/>);
-
-
 
     return(
         <div className="block dialog-messages">
@@ -15,4 +12,4 @@ const CurrentDialogMessages = (props) => {
     );
 }
 
-export default CurrentDialogMessages;
+export default DialogMessages;

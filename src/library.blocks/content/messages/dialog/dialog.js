@@ -1,15 +1,15 @@
 import React from 'react';
 import DialogHeader from './dialog-header/dialog-header.js';
-import DialogMessages from './dialog-messages/dialog-messages.js';
-import DialogInput from './dialog-input/dialog-input.js';
+import DialogMessagesContainer from './dialog-messages/dialog-messages-container.js';
+import DialogInputContainer from './dialog-input/dialog-input-container.js';
 import './dialog.css';
 
 const Dialog = (props) => {
     return (
         <div className="dialog">
             <DialogHeader />
-            <DialogMessages messagesArr={props.messagesPage.messagesArr} />
-            <DialogInput dispatch={props.dispatch} />
+            <DialogMessagesContainer />
+            <DialogInputContainer />
         </div>
     );
 }

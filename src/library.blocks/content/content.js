@@ -6,10 +6,11 @@ import '../block.css';
 import { Route } from "react-router-dom";
 
 const Content = (props) => {
+    
     return (
         <div className="content">
-            <Route path="/Profile" render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>} />
-            <Route path="/Messages" render={() => <Messages messagesPage={props.state.messagesPage} dispatch={props.dispatch}/>} />
+            <Route path="/Profile" render={() => <Profile />} />
+            <Route path="/Messages" render={() => <Messages />} />
         </div>
     );
 }

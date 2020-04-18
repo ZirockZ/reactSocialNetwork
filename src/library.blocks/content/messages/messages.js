@@ -7,8 +7,8 @@ import '../../block.css';
 const Messages = (props) => { 
     return (
         <div className="messages">
-            <DialogsList dialogsArr={props.messagesPage.dialogsArr} />
-            <Dialog messagesPage={props.messagesPage} dispatch={props.dispatch}/>
+            <DialogsList />
+            <Dialog />
         </div>
     );
 }

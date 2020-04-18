@@ -1,8 +1,8 @@
-import { getDate, getTime } from '../utilities.js';
+/*
+import storeReducer from './store-reducer';
+import profileReducer from './profile-reducer.js';
+import messagesReducer from './messages-reducer.js';
 
-const POST_ADD = 'POST-ADD';
-const MESSAGE_ADD = 'MESSAGE-ADD';
-const SET_RENDER_METHOD = 'SET-RENDER-METHOD';
 
 const _state = {
     profilePage: {
@@ -44,10 +44,6 @@ const _state = {
     }
 }
 
-export const postAddActionCreator = (sendBy, text) => ({type: POST_ADD, sendBy, sendDate: getDate(), text, id: "999"});
-export const messageAddActionCreator = (sendBy, text) => ({type: MESSAGE_ADD, sendBy, sendDate: getTime(), text, id: "999" });
-export const setRenderMethodActionCreator = (method) => ({type: SET_RENDER_METHOD, method});
-
 let store = {
     get state(){
         return _state;
@@ -55,27 +51,20 @@ let store = {
 
     _rerender() { },
 
-    dispatch(action){
-        switch (action.type){
-            case POST_ADD:
-                this.state.profilePage.postsArr.unshift({ sendBy: action.sendBy, sendDate: getDate(), text: action.text, id: action.id });
-                this._rerender();
-                break;
-            case MESSAGE_ADD:
-                this.state.messagesPage.messagesArr.push({ sendBy: action.sendBy, sendDate: getTime(), text: action.text, id: action.id });
-                this._rerender();
-                break;
-            case SET_RENDER_METHOD:
-                this._rerender = action.method;
-                break;
-            default:
-                alert("Метод не найден");
-                break;
-        }        
+    dispatch(action){        
+        store = storeReducer(store, action);
+        this.state.profilePage = profileReducer(this.state.profilePage, action);
+        this.state.messagesPage = messagesReducer(this.state.messagesPage, action);
+
+        this._rerender();      
     }
 };
 
-window.store = store;
 
-export default store;
 
+
+
+
+
+
+export default store;*/

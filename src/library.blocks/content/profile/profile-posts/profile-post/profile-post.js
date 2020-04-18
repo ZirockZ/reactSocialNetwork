@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../../block.css';
 import './profile-post.css'
 
 const ProfilePost = (props) =>

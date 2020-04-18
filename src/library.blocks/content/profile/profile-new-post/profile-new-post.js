@@ -1,13 +1,13 @@
 import React from 'react';
 import './profile-new-post.css'
-import {postAddActionCreator} from '../../../../redux/state.js';
+
 
 const ProfileNewPost = (props) => {
     let newPostText = React.createRef();
 
-    let postAdd = () => {
+    let postAdd = () => {        
         let postMessage = newPostText.current.value;
-        props.dispatch(postAddActionCreator("Даня Кондратьев", postMessage));
+        props.postAdd("Даня Кондратьев", postMessage);
     }
 
     return (

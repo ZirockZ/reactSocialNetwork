@@ -1,15 +1,14 @@
 import React from 'react';
 import './dialog-input.css';
-import '../../../../block.css';
-import {messageAddActionCreator} from '../../../../../redux/state.js';
 
 const CurrentDialogInput = (props) => {
 
     let newMessageRef = React.createRef();
 
     let sendMessage = () => {
-        let textAreaText= newMessageRef.current.value;        
-        props.dispatch(messageAddActionCreator("Даня Кондратьев", textAreaText));
+        debugger
+        let textAreaText= newMessageRef.current.value; 
+        props.sendMessage("Даня Кондратьев", textAreaText);       
     }
 
     return (

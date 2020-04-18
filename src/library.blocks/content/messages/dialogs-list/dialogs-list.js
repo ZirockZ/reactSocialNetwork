@@ -1,18 +1,14 @@
 import React from 'react';
 import './dialogs-list.css';
 import DialogsHeader from './dialogs-list-header/dialogs-list-header.js';
-import DialogsListMessage from './dialogs-list-message/dialogs-list-message.js';
+import DialogsListMessagesContainer from './dialogs-list-messages/dialogs-list-messages-container.js';
 
 const DialogsList = (props) => {
-
-
-    let htmlMessagesArr = props.dialogsArr.map(element => <DialogsListMessage userId={element.userId} sendBy={element.sendBy} text={element.text} />);
-
 
     return(
         <div className="dialogs-list">
             <DialogsHeader />
-            {htmlMessagesArr}
+            <DialogsListMessagesContainer store={props.store}/>
         </div>
     );
 }
