@@ -1,9 +1,10 @@
 import React from 'react';
 import Profile from './profile/profile.js';
 import Messages from './messages/messages.js';
+import UsersContainer from './users/users-container.js';
+import { Route } from "react-router-dom";
 import './content.css';
 import '../block.css';
-import { Route } from "react-router-dom";
 
 const Content = (props) => {
     
@@ -11,6 +12,7 @@ const Content = (props) => {
         <div className="content">
             <Route path="/Profile" render={() => <Profile />} />
             <Route path="/Messages" render={() => <Messages />} />
+            <Route path="/Users" render={() => <UsersContainer />} />
         </div>
     );
 }

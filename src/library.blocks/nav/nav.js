@@ -9,7 +9,7 @@ const Nav = () =>
             <NavLink className="nav_a nav_a_margin-top_20px" to="/Profile">Profile</NavLink>
             <NavLink className="nav_a" to="/Messages">Messages</NavLink>
             <NavLink className="nav_a" to="/News">News</NavLink>
-            <NavLink className="nav_a" to="/Music">Music</NavLink>
+            <NavLink className="nav_a" to="/Users">Users</NavLink>
             <NavLink className="nav_a nav_a_margin-top_80px" to="/Settings">Settings</NavLink>
         </div>
     );

@@ -1,5 +1,6 @@
 import { getTime } from '../utilities.js';
-import {MESSAGE_ADD} from '../consts.js';
+
+const MESSAGE_ADD = 'MESSAGE-ADD';
 
 let initStore = {
     dialogsArr: [
@@ -28,20 +29,18 @@ let initStore = {
         { sendBy: "Андрей Карев", sendDate: "22:48", text: "говно", id: "9" },
     ]};
 
-let stateCopy;
-
 const messagesReducer = (state = initStore, action) => {
-    debugger
     switch (action.type){
         case MESSAGE_ADD:
-            stateCopy = {...state};
-            stateCopy.messagesArr = [...state.messagesArr];
-            stateCopy.messagesArr.push({ sendBy: action.sendBy, sendDate: action.sendDate, text: action.text, id: action.id });
-            return stateCopy;
+            let newMessage = { sendBy: action.sendBy, sendDate: action.sendDate, text: action.text, id: action.id }
+            return { 
+                ...state,
+                messagesArr: [...state.messagesArr, newMessage]
+            };
         default:
             return state;
     }  
 }
 
-export const messageAddActionCreator = (sendBy, text) => ({type: MESSAGE_ADD, sendBy, sendDate: getTime(), text, id: "999" });
+export const messageAddActionCreator = (sendBy, text) => ( {type: MESSAGE_ADD, sendBy, sendDate: getTime(), text, id: "999" });
 export default messagesReducer;

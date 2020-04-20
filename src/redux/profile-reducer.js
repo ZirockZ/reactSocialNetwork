@@ -1,7 +1,7 @@
 import { getDate } from '../utilities.js';
-import {POST_ADD} from '../consts.js';
+const POST_ADD = 'POST-ADD';
 
-let initStore = { 
+let initStore = {
     postsArr: [
         { id: "1", sendBy: "Андрей Карев", sendDate: "30.03.2020", text: "От тебя соцсеть говниной пахнет, удали страницу" },
         { id: "2", sendBy: "Андрей Карев", sendDate: "30.03.2020", text: "Ты пидарас" },
@@ -12,21 +12,19 @@ let initStore = {
     ]
 };
 
-let stateCopy;
-
 const profileReducer = (state = initStore, action) => {
-    debugger
-    switch (action.type){
+    switch (action.type) {
         case POST_ADD:
-            stateCopy = {...state};
-            stateCopy.postsArr = [...state.postsArr]
-            stateCopy.postsArr.unshift({ sendBy: action.sendBy, sendDate: action.sendDate, text: action.text, id: action.id });
-            return stateCopy;
+            let newPost = { sendBy: action.sendBy, sendDate: action.sendDate, text: action.text, id: action.id };
+            return { 
+                ...state,
+                postsArr: [newPost, ...state.postsArr]
+            };
         default:
             return state;
-    }  
+    }
 }
 
 
-export const postAddActionCreator = (sendBy, text) => ({type: POST_ADD, sendBy, sendDate: getDate(), text, id: "999"});
+export const postAddActionCreator = (sendBy, text) => ({ type: POST_ADD, sendBy, sendDate: getDate(), text, id: "999" });
 export default profileReducer;
