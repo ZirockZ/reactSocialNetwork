@@ -31,12 +31,12 @@ let initStore = {
 
 const messagesReducer = (state = initStore, action) => {
     switch (action.type){
-        case MESSAGE_ADD:
+        case MESSAGE_ADD:                 
             let newMessage = { sendBy: action.sendBy, sendDate: action.sendDate, text: action.text, id: action.id }
             return { 
                 ...state,
                 messagesArr: [...state.messagesArr, newMessage]
-            };
+            };             
         default:
             return state;
     }  

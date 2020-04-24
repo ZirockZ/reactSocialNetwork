@@ -5,8 +5,7 @@ const CurrentDialogInput = (props) => {
 
     let newMessageRef = React.createRef();
 
-    let sendMessage = () => {
-        debugger
+    let sendMessage = () => {        
         let textAreaText= newMessageRef.current.value; 
         props.sendMessage("Даня Кондратьев", textAreaText);       
     }

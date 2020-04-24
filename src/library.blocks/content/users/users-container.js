@@ -1,6 +1,6 @@
 import Users from './users.js';
 import {connect} from 'react-redux';
-import {followActionCreator} from '../../../redux/users-reducer.js'
+import {followActionCreator, getMoreUsersActionCreator} from '../../../redux/users-reducer.js'
 import './users.css';
 
 let mapStateToProps = (state) => ({
@@ -9,7 +9,10 @@ let mapStateToProps = (state) => ({
 
 let mapDispatchToProps = (dispatch) => ({
     follow: (userId, follow) => {
-        dispatch(followActionCreator(userId, follow))
+        dispatch(followActionCreator(userId, follow))        
+    },
+    showMoreUsers: (usersArr) => {
+        dispatch(getMoreUsersActionCreator(usersArr))
     }
 })
 
